@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="text-center">
+            <h2 class="mb-3">XLSX TO JSON</h2>
+            <input class="form-control mb-3" type="file" (change)="uploadJson($event)" accept="application/JSON">
+            <button (click)="createExcel()" class="btn btn-success mb-3" [disabled]="buttonEN==false">
+                Convert to Excel
+            </button>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="text-center">
+            <h2 class="mb-3">JSON TO XLSX</h2>
+            <input class="form-control mb-3" type="file" (change)="uploadXlsx($event)" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+            <button (click)="createJSON()" class="btn btn-success mb-3" [disabled]="buttonEN==false">
+                Convert to JSON
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="loading">
+    <h3>Loading ...</h3>
+</div>
